@@ -1,6 +1,17 @@
 
-# [RSpec TDD - How To Unit Test Ruby On Rails 6 Apps For Absolute Beginners | 20in20 - Week 14](https://www.youtube.com/watch?v=AAqPc0j_2bg&t=121s)
+### [ARTICLE:Iterate Fast – How You Can Have Fewer Bugs By Using Rspec TDD In Ruby On Rails 6](https://deanin.com/blog/rspec-rails/#google_vignette)
 
+### [YOUTUBE:RSpec TDD - How To Unit Test Ruby On Rails 6 Apps For Absolute Beginners](https://www.youtube.com/watch?v=AAqPc0j_2bg&t=121s)
+
+[TOC]
+
+## CONTENTS
+- ## [rspec: cheatsheet](#cheatsheet)
+- ## [app framework](#appframework)
+- ## [webpacker](#webpack)
+
+## CHEATSHEET
+```
 /bin/zsh --login && rvm use --default 3.2.2
 
 rspec --init      # sets up a base skeleton for RSpec testing in the current app
@@ -17,3 +28,78 @@ rspec spec/card_spec.rb   #  isolate SPECIFIC test
 
 ./spec/card_spec.rb:3   # run spec file from example with LINE NUMBER = 3
 
+```
+
+## AppFramework
+```
+gem install rails -v 6.1.7.7
+
+# [railsbytes: rails templates](https://railsbytes.com/)
+APP_NAME=rspec-deanin-app-0
+RAILS_BUILD_VERSION=6.1.7.7
+
+rails _${RAILS_BUILD_VERSION}_ new ${APP_NAME} -t
+
+cd ${APP_NAME}
+```
+
+
+## webpack
+```
+https://yarnpkg.com/lang/en/docs/install/
+
+npm install --global yarn
+
+rails webpacker:install
+
+```
+
+## gem-init
+
+vi Gemfile
+--
+gem 'devise'
+
+group :development do
+  gem 'rspec-rails'
+  ...
+--
+bundle install
+
+# add 'RSpec' Templates
+# https://railsbytes.com/public/templates/z0gsLX
+#
+rails app:template LOCATION="https://railsbytes.com/script/z0gsLX"
+---
+# remove 'test' directory: y
+
+---
+
+rails g devise:install
+rails g devise User   # create devise Users
+
+# IF NEEDED
+# rails db:rollback
+
+rails db:migrate RAILS_ENV=test
+
+rails spec
+
+# generate minimal app as example to create tests
+
+rails g scaffold posts title:string body:text user:references views:integer
+
+vi db/migrate/*_create_posts
+--
+      t.integer :views, default: 0
+
+--
+rails db:migrate RAILS_ENV=test
+
+
+rspec spec
+
+rspec spec --format documentation
+
+```
+#cheatsheet
