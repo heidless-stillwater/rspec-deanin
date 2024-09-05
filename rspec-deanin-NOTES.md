@@ -93,7 +93,7 @@ rails g devise User   # create devise Users
 
 rails db:migrate RAILS_ENV=test
 
-rails spec
+rspec spec --format documentation
 
 ```
 
@@ -108,10 +108,7 @@ vi db/migrate/*_create_posts
 --
 rails db:migrate RAILS_ENV=test
 
-rspec spec
-
 rspec spec --format documentation
 
 ```
-
 
