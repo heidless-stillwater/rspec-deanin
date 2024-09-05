@@ -6,9 +6,13 @@
 [TOC]
 
 ## CONTENTS
-- ## [rspec: cheatsheet](#cheatsheet)
-- ## [app framework](#appframework)
-- ## [webpacker](#webpack)
+- ### [rspec: cheatsheet](#cheatsheet)
+- ### [app framework](#appframework)
+- #### [webpacker](#webpack)
+- ### [gem init](#geminit)
+- ### [railsbytes](#railsbytes-template)
+- ### [devise](#devise-gem)
+- ### [minimal app](#minimalapp)
 
 ## CHEATSHEET
 ```
@@ -29,6 +33,7 @@ rspec spec/card_spec.rb   #  isolate SPECIFIC test
 ./spec/card_spec.rb:3   # run spec file from example with LINE NUMBER = 3
 
 ```
+---
 
 ## AppFramework
 ```
@@ -54,8 +59,8 @@ rails webpacker:install
 
 ```
 
-## gem-init
-
+## GemInit
+```
 vi Gemfile
 --
 gem 'devise'
@@ -66,14 +71,19 @@ group :development do
 --
 bundle install
 
-# add 'RSpec' Templates
-# https://railsbytes.com/public/templates/z0gsLX
+```
+
+## railsbytes-template
+### https://railsbytes.com/public/templates/z0gsLX
 #
+```
 rails app:template LOCATION="https://railsbytes.com/script/z0gsLX"
 ---
 # remove 'test' directory: y
+```
 
----
+## devise-gem
+```
 
 rails g devise:install
 rails g devise User   # create devise Users
@@ -85,8 +95,10 @@ rails db:migrate RAILS_ENV=test
 
 rails spec
 
-# generate minimal app as example to create tests
+```
 
+## MinimalApp
+```
 rails g scaffold posts title:string body:text user:references views:integer
 
 vi db/migrate/*_create_posts
@@ -96,10 +108,10 @@ vi db/migrate/*_create_posts
 --
 rails db:migrate RAILS_ENV=test
 
-
 rspec spec
 
 rspec spec --format documentation
 
 ```
-#cheatsheet
+
+
