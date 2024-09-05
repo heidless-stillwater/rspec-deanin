@@ -110,5 +110,9 @@ rails db:migrate RAILS_ENV=test
 
 rspec spec --format documentation
 
+rails db:migrate RAILS_ENV=development
+
+rails s
+
 ```
 
