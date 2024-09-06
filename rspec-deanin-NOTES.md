@@ -24,7 +24,7 @@ rspec   # run ALL spec files
 
 rspec spec --format documentation     # run ALL tests with DETAIL of both SUCCESS & FAILURE
 
-rspec spec/context_spec.rb --format documentation 
+rspec spec/models/post_spec.rb --format documentation 
 
 rspec spec/views/posts/index.html.erb_spec.rb --format documentation 
 
