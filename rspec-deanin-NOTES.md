@@ -15,8 +15,14 @@
 - ### [minimal app](#minimalapp)
 
 ## CHEATSHEET
+### env
 ```
 /bin/zsh --login && rvm use --default 3.2.2
+
+```
+
+### rspec
+```
 
 rspec --init      # sets up a base skeleton for RSpec testing in the current app
 
@@ -31,6 +37,14 @@ rspec spec/views/posts/index.html.erb_spec.rb --format documentation
 rspec spec/card_spec.rb   #  isolate SPECIFIC test
 
 ./spec/card_spec.rb:3   # run spec file from example with LINE NUMBER = 3
+
+```
+### git
+```
+export H_BRANCH='rspec-2'
+echo ${H_BRANCH}
+git push -d origin ${H_BRANCH}   # Delete remote
+git branch -d ${H_BRANCH}               # Delete local
 
 ```
 ---
